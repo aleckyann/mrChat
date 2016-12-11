@@ -1,5 +1,5 @@
-<?php $meuId = '1'; ?>
-<?php $idDoContato = '2'; ?>
+<?php $meuId = '2'; ?>
+<?php $idDoContato = '1'; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -11,22 +11,23 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    </br>
+</br>
 
-    <div class="container">
-        <textarea class="form-control" id="mensagem" placeholder="Escreva sua mensagem"></textarea>
-        </br>
-        <button class="btn btn-success btn-block" onclick="enviaMensagem(<?= $meuId ?>, <?= $idDoContato?>)">Enviar</button>
-    </div>
-
-    <hr>
-
-    <div class="container">
-        <div class="alert" role="alert" style="width:600px;height:300px;background-color:#F2F2F2;overflow:auto;">
+    <section class="container">
+        <div class="col-md-4 col-md-offset-4 thumbnail" style="height:20em;overflow:auto;">
             <div id="msg"></div>
-        </div>  
-    </div>
+        </div>
+        
+        <div class="col-md-4 col-md-offset-4">
+            <input class="form-control" id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
+            </br>
+            <button class="btn btn-success btn-block" onclick="enviaMensagem(<?= $meuId ?>, <?= $idDoContato?>)">Enviar</button>
+        </div>
+    </section>
     
     <script src="main.js"></script>
+    <script>
+        listaMensagem('<?= $meuId ?>', '<?= $idDoContato ?>');    
+    </script>
 </body>
 </html>

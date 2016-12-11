@@ -51,8 +51,8 @@ function listaMensagem(meuId, idDoContato){
                     $('#msg').append('<p align="left" class="text-primary"><b>Contato: </b>' + result.mensagem + '</p>');                    
                 }
             });
+            $('#msg').scrollBotton($('#msg').prop("scrollHeight"));
         }
     });
 }
 
-listaMensagem('1', '2');
