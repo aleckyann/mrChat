@@ -28,7 +28,7 @@ function listaUsuarios(meuId){
         success : function(resultado){
             resultado = JSON.parse(resultado);
             resultado.forEach(function(result){
-                $('#usuarios').append('<p><button class="btn btn-primary" onclick="stopLoopAjax(loopAjax);listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
+                $('#usuarios').append('<p><button class="btn btn-primary btn-block" onclick="listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
             })
         }
     });
@@ -45,22 +45,18 @@ function listaMensagem(meuId, idDoContato){
             idDoContato,
         },
         success : function(resultado){
-            var loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3000);
+            clearTimeout(loopAjax);
+            loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3000);
 
             resultado = JSON.parse(resultado);
             $('#msg').text('');
             resultado.forEach(function(result){
                 if(result.de == meuId){
-                    $('#msg').append('<p align="right" class="text-success"><b>Eu: </b>' + result.mensagem + '</p>');
+                    $('#msg').append('<p><b class="label label-success"><span class="glyphicon glyphicon-user" aria-hidden="true">Você:</span></b> ' + result.mensagem + '</p></br>');
                 } else {
-                    $('#msg').append('<p align="left" class="text-primary"><b>Contato: </b>' + result.mensagem + '</p>');                    
+                    $('#msg').append('<p><b class="label label-primary"><span class="glyphicon glyphicon-user" aria-hidden="true">Contato:</span></b> ' + result.mensagem + '</p></br>');                    
                 }
             });
         }
     });
-}
-
-
-function stopLoopAjax(loopAjax){
-    clearTimeout(loopAjax);
 }
