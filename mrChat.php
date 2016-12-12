@@ -1,4 +1,4 @@
-<?php $meuId = '2'; ?>
+<?php $meuId = '2'; ?> <!-- TROQUE PELA SESSÃO -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
