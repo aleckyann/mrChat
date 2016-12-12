@@ -1,11 +1,13 @@
-<?php require_once('../Medoo/Conn.php');
+<?php 
+require_once('../Medoo/Conn.php');
+require_once('Filter.php');
 
 switch ($_POST['action']) {
 
     case 'enviaMensagem':
-        $meuId = $_POST['meuId'];
-        $idDoContato = $_POST['idDoContato'];
-        $mensagem = $_POST['mensagem'];
+        $meuId = Filter::postInt('meuId');
+        $idDoContato = Filter::postInt('idDoContato');
+        $mensagem = Filter::postString('mensagem');
         $database->insert('chat',['de' => $meuId, 'para' => $idDoContato, 'mensagem' => $mensagem]);
         break;
 
@@ -17,8 +19,8 @@ switch ($_POST['action']) {
 
     
     case 'listaMensagem':
-        $meuId = $_POST['meuId'];
-        $idDoContato = $_POST['idDoContato'];
+        $meuId = Filter::postInt('meuId');
+        $idDoContato = Filter::postInt('idDoContato');
         $mensagens = $database->select('chat', ['mensagem', 'datetime', 'de', 'para'], [ 'AND' => ['de' => [$meuId, $idDoContato], 'para' => [$meuId, $idDoContato] ] ]);
         echo json_encode($mensagens);
         break;

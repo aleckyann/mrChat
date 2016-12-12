@@ -1,3 +1,5 @@
+var loopAjax;
+
 function enviaMensagem(meuId, idDoContato){
     var mensagem = $('#mensagem').val();
     $.ajax({
@@ -16,7 +18,7 @@ function enviaMensagem(meuId, idDoContato){
 }
 
 
-function listaUsuarios(){
+function listaUsuarios(meuId){
     $.ajax({
         method: "POST",
         url: "mrChat/api.php",
@@ -24,7 +26,10 @@ function listaUsuarios(){
             action : 'listaUsuarios',
         },
         success : function(resultado){
-            console.log(resultado);            
+            resultado = JSON.parse(resultado);
+            resultado.forEach(function(result){
+                $('#usuarios').append('<p><button class="btn btn-primary" onclick="stopLoopAjax(loopAjax);listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
+            })
         }
     });
 }
@@ -40,7 +45,7 @@ function listaMensagem(meuId, idDoContato){
             idDoContato,
         },
         success : function(resultado){
-            setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3000);
+            var loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3000);
 
             resultado = JSON.parse(resultado);
             $('#msg').text('');
@@ -51,8 +56,11 @@ function listaMensagem(meuId, idDoContato){
                     $('#msg').append('<p align="left" class="text-primary"><b>Contato: </b>' + result.mensagem + '</p>');                    
                 }
             });
-            $('#msg').scrollBotton($('#msg').prop("scrollHeight"));
         }
     });
 }
 
+
+function stopLoopAjax(loopAjax){
+    clearTimeout(loopAjax);
+}
