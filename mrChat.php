@@ -1,5 +1,4 @@
 <?php $meuId = '2'; ?>
-<?php $idDoContato = '1'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,7 +24,7 @@
         <div class="col-md-4 col-md-offset-4">
             <input class="form-control" id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
             </br>
-            <button class="btn btn-success btn-block" onclick="enviaMensagem(<?= $meuId ?>, <?= $idDoContato?>)">Enviar</button>
+            <button class="btn btn-success btn-block" id="enviaMensagem">Enviar</button>
         </div>
     </section>
     

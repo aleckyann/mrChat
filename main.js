@@ -24,6 +24,7 @@ function listaUsuarios(meuId){
         url: "mrChat/api.php",
         data: {
             action : 'listaUsuarios',
+            meuId
         },
         success : function(resultado){
             resultado = JSON.parse(resultado);
@@ -50,6 +51,8 @@ function listaMensagem(meuId, idDoContato){
 
             resultado = JSON.parse(resultado);
             $('#msg').text('');
+            $('#enviaMensagem').attr('onclick', '');
+            $('#enviaMensagem').attr('onclick', 'enviaMensagem('+meuId+', '+idDoContato+')');
             resultado.forEach(function(result){
                 if(result.de == meuId){
                     $('#msg').append('<p><b class="label label-success"><span class="glyphicon glyphicon-user" aria-hidden="true">Você:</span></b> ' + result.mensagem + '</p></br>');

@@ -13,7 +13,8 @@ switch ($_POST['action']) {
 
 
     case 'listaUsuarios':
-        $usuarios = $database->select('users',['id', 'email']);
+        $meuId = Filter::postInt('meuId');
+        $usuarios = $database->select('users',['id', 'email'], ['AND' => ['id[!]' => $meuId] ]);
         echo json_encode($usuarios);
         break;
 
