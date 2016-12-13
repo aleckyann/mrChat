@@ -1,0 +1,36 @@
+# mrChat
+Chat com PHP + Jquery + Medoo.
+
+BANCO ULTILIZADO: 
+
+1)
+===
+
+CREATE TABLE `chat` (
+  `de` int(11) NOT NULL,
+  `para` int(11) NOT NULL,
+  `mensagem` text NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+2)
+===
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `senha` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+3)
+===
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+4)
+===
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
