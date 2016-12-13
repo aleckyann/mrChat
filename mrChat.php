@@ -13,15 +13,15 @@
 </br>
 
     <section class="container">
-        <div class="col-md-4">
+        <div class="col-md-3 col-sm-offset-9">
             <div id="usuarios"></div>
         </div>
 
-        <div class="col-md-4 thumbnail" style="height:20em;overflow:auto;">
+        <div class="col-md-3 col-sm-offset-9 thumbnail" style="height:20em;overflow:auto;">
             <div id="msg"></div>
         </div>
         
-        <div class="col-md-4 col-md-offset-4">
+        <div class="col-md-3 col-md-offset-9">
             <input class="form-control" id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
             </br>
             <button class="btn btn-success btn-block" id="enviaMensagem">Enviar</button>

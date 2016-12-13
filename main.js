@@ -29,7 +29,7 @@ function listaUsuarios(meuId){
         success : function(resultado){
             resultado = JSON.parse(resultado);
             resultado.forEach(function(result){
-                $('#usuarios').append('<p><button class="btn btn-primary btn-block" onclick="listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
+                $('#usuarios').append('<p><button class="btn btn-primary btn-sm btn-block" onclick="listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
             })
         }
     });
