@@ -1,7 +1,7 @@
 var loopAjax;
 
 function enviaMensagem(meuId, idDoContato){
-    var mensagem = $('#mensagem').val();
+    var mensagem = document.getElementById('mensagem').value;
     $.ajax({
         method: "POST",
         url: "mrChat/api.php",
@@ -12,7 +12,7 @@ function enviaMensagem(meuId, idDoContato){
             mensagem,
         },
         success : function(resultado){
-            $('#mensagem').val('');
+            document.getElementById("mensagem").value =''; //Limpa input de mensagem
         }
     });
 }
@@ -46,18 +46,17 @@ function listaMensagem(meuId, idDoContato){
             idDoContato,
         },
         success : function(resultado){
-            clearTimeout(loopAjax);
-            loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3000);
-
-            resultado = JSON.parse(resultado);
-            $('#msg').text('');
-            $('#enviaMensagem').attr('onclick', '');
-            $('#enviaMensagem').attr('onclick', 'enviaMensagem('+meuId+', '+idDoContato+')');
+            clearTimeout(loopAjax); //Destroi evento com requisições ajax existente.
+            loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3100); //cria loop recursivo
+            resultado = JSON.parse(resultado); //cria um objeto com json retornado
+            document.getElementById('caixaDeMensagens').innerHTML = ""; //limpa a caixa de mensagens
+            document.getElementById("enviaMensagem").setAttribute("onclick", ""); //Limpa envento onclick      
+            document.getElementById("enviaMensagem").setAttribute("onclick", "enviaMensagem("+ meuId +","+ idDoContato +")"); //seta envento onclick          
             resultado.forEach(function(result){
                 if(result.de == meuId){
-                    $('#msg').append('<p><b class="label label-success"><span class="glyphicon glyphicon-user" aria-hidden="true">Você:</span></b> ' + result.mensagem + '</p></br>');
+                    $('#caixaDeMensagens').append('<p><b class="label label-success"><span class="glyphicon glyphicon-user" aria-hidden="true">Você:</span></b> ' + result.mensagem + '</p></br>');
                 } else {
-                    $('#msg').append('<p><b class="label label-primary"><span class="glyphicon glyphicon-user" aria-hidden="true">Contato:</span></b> ' + result.mensagem + '</p></br>');                    
+                    $('#caixaDeMensagens').append('<p><b class="label label-primary"><span class="glyphicon glyphicon-user" aria-hidden="true">Contato:</span></b> ' + result.mensagem + '</p></br>');                    
                 }
             });
         }

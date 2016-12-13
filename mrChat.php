@@ -18,7 +18,7 @@
         </div>
 
         <div class="col-md-3 col-sm-offset-9 thumbnail" style="height:20em;overflow:auto;">
-            <div id="msg"></div>
+            <div id="caixaDeMensagens"></div>
         </div>
         
         <div class="col-md-3 col-md-offset-9">
