@@ -3,13 +3,15 @@ Chat com PHP + Jquery + Medoo.
 
 
 BANCO ULTILIZADO: Mysql.
+
 NÚMERO DE TABELAS USADAS PARA CHAT: 1
+
 COLUNAS USADAS NA TABELA: 3
 
 
 1)
 ===
-
+```
 CREATE TABLE `chat` (
   `de` int(11) NOT NULL,
   `para` int(11) NOT NULL,
@@ -22,6 +24,7 @@ CREATE TABLE `chat` (
 
 2)
 ===
+```
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -37,9 +40,3 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 ```
-
-
-4)
-===
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
