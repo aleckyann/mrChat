@@ -1,4 +1,4 @@
-<?php $meuId = '2'; ?> <!-- TROQUE PELA SESSÃO -->
+<?php $meuId = '1'; ?> <!-- TROQUE PELO ID DE SESSÃO -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -7,7 +7,6 @@
     <title>Test</title>
     <script src="jquery/jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 </br>

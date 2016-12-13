@@ -1,6 +1,6 @@
 <?php 
-require_once('../Medoo/Conn.php');
-require_once('Filter.php');
+include('../Medoo/Conn.php');
+include('Filter.php');
 
 switch ($_POST['action']) {
 

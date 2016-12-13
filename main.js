@@ -47,7 +47,7 @@ function listaMensagem(meuId, idDoContato){
         },
         success : function(resultado){
             clearTimeout(loopAjax); //Destroi evento com requisições ajax existente.
-            loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 3100); //cria loop recursivo
+            loopAjax = setTimeout("listaMensagem("+meuId+", "+idDoContato+")", 4100); //cria loop recursivo
             resultado = JSON.parse(resultado); //cria um objeto com json retornado
             document.getElementById('caixaDeMensagens').innerHTML = ""; //limpa a caixa de mensagens
             document.getElementById("enviaMensagem").setAttribute("onclick", ""); //Limpa envento onclick      
