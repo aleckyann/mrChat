@@ -62,4 +62,3 @@ function listaMensagem(meuId, idDoContato){
         }
     });
 }
-
