@@ -1,0 +1,81 @@
+@media (min-width:700px) {
+    .mrChat-box {
+        background:#e5eecc;
+        height:60%;
+        width: 20em;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        padding: 0;
+        margin-bottom: 30px;
+        margin-right: 10px;
+        border: solid 1px #483D8B;
+        z-index: 9999;
+    }
+}
+
+@media (max-width:700px) {
+    .mrChat-box {
+        background:#e5eecc;
+        height:30em;
+        width: 100%;
+        position: relative;
+        right: 0;
+        bottom: 0;
+        padding: 0;
+        margin-bottom: 0;
+        margin-right: 10px;
+        border: solid 1px #483D8B;
+        z-index: 1;
+    }
+}
+
+.mrChat-caixaDeMensagens {
+    background: white;
+    height:66%;
+    overflow:auto;
+    border-bottom: solid 1px #483D8B;
+}
+
+
+.mrChat-usuarios {
+    border-bottom: solid 1px #483D8B;
+    height: 20%;
+    overflow:auto;
+}
+
+.mrChat-name {
+    text-align: center;
+    border-bottom: solid 1px #483D8B;
+    width: 100%;
+    height: 5%;
+    background: #483D8B;
+    color: white;
+}
+
+.mrChat-contato {
+    cursor: pointer;
+    margin: 10px;
+    font-size: 10px;
+}
+
+.mrChat-contato:hover {
+    cursor: pointer;
+    margin: 10px;
+    font-size: 12px;
+}
+
+.mrChat-form {
+    width: 100%;
+    height: 10%;
+}
+
+.mrChat-msg {
+    width: 100%;
+}
+
+.mrChat-name-icon {
+    right: 0;
+    cursor: pointer;
+    left: 0;
+}

@@ -29,7 +29,7 @@ function listaUsuarios(meuId){
         success : function(resultado){
             resultado = JSON.parse(resultado);
             resultado.forEach(function(result){
-                $('#usuarios').append('<p><button class="btn btn-primary btn-sm btn-block" onclick="listaMensagem('+meuId+','+result.id+')">'+result.email+'</button></p>');           
+                $('#usuarios').append('<li class="mrChat-contato text-primary" onclick="listaMensagem('+meuId+','+result.id+')">'+result.email+'</li>');           
             })
         }
     });
@@ -54,11 +54,12 @@ function listaMensagem(meuId, idDoContato){
             document.getElementById("enviaMensagem").setAttribute("onclick", "enviaMensagem("+ meuId +","+ idDoContato +")"); //seta envento onclick          
             resultado.forEach(function(result){
                 if(result.de == meuId){
-                    $('#caixaDeMensagens').append('<p><b class="label label-success"><span class="glyphicon glyphicon-user" aria-hidden="true">Você:</span></b> ' + result.mensagem + '</p></br>');
+                    $('#caixaDeMensagens').append('<p class="text-success"><b class="label label-success"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></b> ' + result.mensagem + '</p>');
                 } else {
-                    $('#caixaDeMensagens').append('<p><b class="label label-primary"><span class="glyphicon glyphicon-user" aria-hidden="true">Contato:</span></b> ' + result.mensagem + '</p></br>');                    
+                    $('#caixaDeMensagens').append('<p class="text-primary"><b class="label label-primary"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></b> ' + result.mensagem + '</p>');                    
                 }
             });
         }
     });
 }
+

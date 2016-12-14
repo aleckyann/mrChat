@@ -1,4 +1,4 @@
-<?php $meuId = '2'; ?> <!-- TROQUE PELO ID DE SESSÃO -->
+<?php $meuId = '1'; ?> <!-- TROQUE PELO ID DE SESSÃO -->
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -35,20 +35,18 @@
         <div class="alert alert-danger" role="alert">Ocupar espaço...</div>
 
     <section class="mrChat-box">
-        
-        <div class="mrChat-name"><b class="glyphicon glyphicon-option-horizontal mrChat-name-icon" aria-hidden="true"></b></div>
+        <div class="mrChat-name">Chat</div>
         <div class="mrChat-usuarios">
             <div id="usuarios"></div>
         </div>
 
-
-        <div class="mrChat-caixaDeMensagens ocultavel">
+        <div class="mrChat-caixaDeMensagens">
             <div id="caixaDeMensagens"></div>
         </div>
 
-        <div class="mrChat-form ocultavel">
+        <div class="mrChat-form">
             <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
-            <button id="enviaMensagem">Enviar</button>
+            <button class="" id="enviaMensagem">Enviar</button>
         </div>
     </section>    
     
