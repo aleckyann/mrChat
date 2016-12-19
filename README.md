@@ -1,5 +1,8 @@
 # mrChat
-Chat com PHP + Jquery + Medoo.
+Chat com PHP 7 + Jquery 3.1.1 + Medoo 1.1.3
+
+Medoo - medoo.in/
+Jquery - https://jquery.com/
 
 
 BANCO ULTILIZADO: Mysql.
@@ -40,3 +43,10 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
 ```
+
+
+
+---
+Próxima release:
+Sem Jquery - Js puro
+Sem Html - Criação de elementos dinâmica
