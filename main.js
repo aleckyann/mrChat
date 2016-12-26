@@ -1,3 +1,5 @@
+
+
 var loopAjax;
 
 function enviaMensagem(meuId, idDoContato){

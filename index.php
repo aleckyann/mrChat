@@ -19,38 +19,26 @@
             </div>
         </div>
     </nav>
-    <hr>
     <div class="page-header container">
-        <div class="alert alert-success" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-info" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-warning" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-danger" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-success" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-info" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-warning" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-danger" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-success" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-info" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-warning" role="alert">Ocupar espaço...</div>
-        <div class="alert alert-danger" role="alert">Ocupar espaço...</div>
 
-    <section class="mrChat-box">
-        <div class="mrChat-name">Chat</div>
-        <div class="mrChat-usuarios">
-            <div id="usuarios"></div>
-        </div>
+        <section class="mrChat-box"></section>
+            <div class="mrChat-name">Chat</div>
+            <div class="mrChat-usuarios">
+                <div id="usuarios"></div>
+            </div>
 
-        <div class="mrChat-caixaDeMensagens">
-            <div id="caixaDeMensagens"></div>
-        </div>
+            <div class="mrChat-caixaDeMensagens">
+                <div id="caixaDeMensagens"></div>
+            </div>
 
-        <div class="mrChat-form">
-            <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
-            <button class="" id="enviaMensagem">Enviar</button>
-        </div>
-    </section>    
+            <div class="mrChat-form">
+                <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
+                <button class="" id="enviaMensagem">Enviar</button>
+            </div>
+        </section>    
     
     </div>
+    
     <script src="main.js"></script>
     <script>
         listaUsuarios('<?= $meuId ?>'); 
