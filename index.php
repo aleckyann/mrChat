@@ -38,6 +38,7 @@
         </section>
 
     </div>
+    
     <script src="Public/Main.js"></script>
     <script>
         listaUsuarios('<?= $meuId ?>');
