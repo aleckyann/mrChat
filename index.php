@@ -1,20 +1,20 @@
-<?php $meuId = '1'; ?> <!-- TROQUE PELO ID DE SESSÃO -->
-
+<?php $meuId = '2'; ?> <!-- TROQUE PELO ID DE SESSÃO -->
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
-    <script src="jquery/jquery.min.js"></script>
+    <title><?= $meuId ?></title>
+    <script src="Libs/Jquery.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="mrChat.css">
 </head>
 <body>
+
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                <img alt="mrChat" src="...">
+                <img alt="mrChat">
             </a>
             </div>
         </div>
@@ -35,13 +35,12 @@
                 <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
                 <button class="" id="enviaMensagem">Enviar</button>
             </div>
-        </section>    
-    
+        </section>
+
     </div>
-    
-    <script src="main.js"></script>
+    <script src="Public/Main.js"></script>
     <script>
-        listaUsuarios('<?= $meuId ?>'); 
+        listaUsuarios('<?= $meuId ?>');
     </script>
 </body>
 </html>
