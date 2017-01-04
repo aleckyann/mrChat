@@ -3,7 +3,7 @@ require_once '../Libs/Medoo.php';
 
 $modos = ['dev', 'deploy', 'test'];
 
-$use = $modos[0];
+$use = $modos[1];
 
 switch ($use) {
   case $modos[0]:
