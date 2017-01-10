@@ -12,27 +12,33 @@
 
     <div class="page-header container">
 
-        <section class="mrChat-box"></section>
-            <div class="mrChat-name">Chat</div>
-            <div class="mrChat-usuarios">
-                <div id="usuarios"></div>
-            </div>
+        <div class="col-sm-3 col-sm-offset-9">
+          <div class="panel panel-success">
+            <div class="panel-heading">Chat</div>
+            <div class="panel-body" id="usuarios"></div>
+          </div>
 
-            <div class="mrChat-caixaDeMensagens">
-                <div id="caixaDeMensagens"></div>
+          <div class="mrChat-form">
+            <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
+            <button class="btn btn-sm btn-success" id="enviaMensagem">Enviar</button>
+          </div>
+          <br>
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              Box
             </div>
-
-            <div class="mrChat-form">
-                <input id="mensagem" type="text" placeholder="Escreva sua mensagem"></input>
-                <button class="" id="enviaMensagem">Enviar</button>
+            <div class="panel-body height" id="caixaDeMensagens">
+              <small>Selecione um contato...</small>
             </div>
-        </section>
+          </div>
+        </div>
 
     </div>
 
     <script src="Public/Main.js"></script>
     <script>
-        listaUsuarios('<?= $meuId ?>');
+      listaUsuarios('<?= $meuId ?>');
     </script>
+
 </body>
 </html>

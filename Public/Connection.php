@@ -1,9 +1,8 @@
 <?php
 require_once '../Libs/Medoo.php';
 
-$modos = ['dev', 'deploy', 'test'];
-
-$use = $modos[1];
+$modos = ['desenvolvimento', 'deploy', 'test'];
+$use = $modos[0]; #Altere aqui o modo de desenvolvimento 0->desenvolvimento, 1->deploy, 2->test
 
 switch ($use) {
   case $modos[0]:

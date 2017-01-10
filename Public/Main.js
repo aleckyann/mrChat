@@ -2,12 +2,11 @@ var loopAjax;
 
 var sound = new Audio('Sound/alert.ogg');
 
-localStorage.setItem('chat2', null);
+localStorage.setItem('resultadoNovo', null);
 
 function enviaMensagem(meuId, idDoContato){
     var mensagem = document.getElementById('mensagem').value;
-    $.ajax({
-        method: "POST",
+    $.post({
         url: "Public/Api.php",
         data: {
             action : 'enviaMensagem',
@@ -21,10 +20,9 @@ function enviaMensagem(meuId, idDoContato){
     });
 }
 
-
+// Chame esta function na página do chat e passe o id de session como argumento
 function listaUsuarios(meuId){
-    $.ajax({
-        method: "POST",
+    $.post({
         url: "Public/Api.php",
         data: {
             action : 'listaUsuarios',
@@ -39,10 +37,8 @@ function listaUsuarios(meuId){
     });
 }
 
-
 function listaMensagem(meuId, idDoContato){
-    $.ajax({
-        method : "POST",
+    $.post({
         url : "Public/Api.php",
         data : {
             action : 'listaMensagem',
@@ -55,12 +51,12 @@ function listaMensagem(meuId, idDoContato){
             resultado = JSON.parse(resultado); //cria um objeto com json retornado
 
             //Inicio de testes de aviso de sonoridade
-            localStorage.setItem('chat1', resultado);
-            if(localStorage.getItem('chat1') == localStorage.getItem('chat2')){
-              localStorage.setItem('chat1', null);
+            localStorage.setItem('resultadoUsado', resultado);
+            if(localStorage.getItem('resultadoUsado') == localStorage.getItem('resultadoNovo')){
+              localStorage.setItem('resultadoUsado', null);
             } else {
               sound.play();
-              localStorage.setItem('chat2', resultado);
+              localStorage.setItem('resultadoNovo', resultado);
             }
             //fim de testes de aviso de sonoridade
 
@@ -74,6 +70,7 @@ function listaMensagem(meuId, idDoContato){
                     $('#caixaDeMensagens').append('<p class="text-primary"><b class="label label-primary"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></b> ' + result.mensagem + '</p>');
                 }
             });
+            $("#caixaDeMensagens").animate({ scrollTop: $('#caixaDeMensagens').prop("scrollHeight")}, 500);
         }
     });
 }
